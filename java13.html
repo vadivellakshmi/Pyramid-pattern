@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pyramid pattern</title>
+</head>
+<body>
+    
+    <label> enter a number to construct a Pyramid pattern</label>
+    <input type="number" id="txt">
+    <br><br>
+    <button type="button" id="btn">Click Me</button>
+    <p class="output"></p>
+
+
+    <script>
+        btnClick = document.querySelector('#btn');
+        btnClick.addEventListener('click', Pyramid);
+        function Pyramid()
+        {
+           num = document.querySelector('#txt').value;
+           console.log(num);
+            result = '';
+           for(let i=1; i<=num; i++)
+           {
+            for(let j=num; j>i; j--)
+            {
+                result += '&nbsp';  
+
+            }
+                for(let k=0; k<((i*2)-1); k++){
+
+
+                    result += '*';  
+                
+                
+            }
+            
+               result += '<br>';
+               
+           }
+
+           for(let i=1; i<num; i++)
+           {
+            for(let j=0; j<i; j++)
+            {
+                result += '&nbsp';  
+
+            }
+                for(let k=(num - i) * 2 - 1; k>0; k--){
+
+
+                    result += '*';  
+                
+                
+            }
+            
+               result += '<br>';
+               
+           }
+
+          
+
+           document.querySelector('.output').innerHTML= '<br>' +result;
+        }
+
+
+    </script>
+
+</body>
+</html>
